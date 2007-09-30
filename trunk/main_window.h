@@ -13,7 +13,12 @@ public:
 private:
   Subtitles _subtitles;
 
+  void refreshSubtitles();
+
 private slots:
   void on_actionQuit_triggered();
   void on_actionOpenSubtitles_triggered();
+  void on_sliderMilliseconds_valueChanged(int value);
+  void on_sliderSeconds_valueChanged(int value);
+  void on_sliderMinutes_valueChanged(int value);
 };
