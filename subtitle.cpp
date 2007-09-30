@@ -13,13 +13,13 @@ Subtitle::Subtitle(int number, const QTime &startTime, const QTime &endTime, con
 {
 }
 
-void Subtitle::move(int milliseconds)
+void Subtitle::shift(int milliseconds)
 {
-  move(_startTime, milliseconds);
-  move(_endTime, milliseconds);
+  shift(_startTime, milliseconds);
+  shift(_endTime, milliseconds);
 }
 
-void Subtitle::move(QTime &time, int milliseconds)
+void Subtitle::shift(QTime &time, int milliseconds)
 {
   if (milliseconds < 0 && time.msecsTo(QTime(0, 0)) > milliseconds)
     time.setHMS(0, 0, 0, 0);
@@ -132,8 +132,8 @@ bool Subtitles::parseNextSubtitle(QTextStream &stream)
   return true;
 }
 
-void Subtitles::move(int milliseconds)
+void Subtitles::shift(int milliseconds)
 {
   for (int i = 0; i < _subtitles.count(); ++i)
-    _subtitles[i].move(milliseconds);
+    _subtitles[i].shift(milliseconds);
 }
