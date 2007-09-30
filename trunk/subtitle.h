@@ -17,7 +17,7 @@ public:
   QTime endTime() const { return _endTime; }     // End of the subtitle display
   QStringList lines() const { return _lines; }   // Subtitle in itself
 
-  void move(int milliseconds);
+  void shift(int milliseconds);
 
 private:
   int _number;
@@ -25,7 +25,7 @@ private:
   QTime _endTime;
   QStringList _lines;
 
-  void move(QTime &time, int milliseconds);
+  void shift(QTime &time, int milliseconds);
 };
 
 class Subtitles
@@ -40,7 +40,7 @@ public:
   const QList<Subtitle> &subtitles() const { return _subtitles; }
 
   // Operations
-  void move(int milliseconds); // If milliseconds is negative, backward subtitles, if positive, forward subtitles
+  void shift(int milliseconds); // If milliseconds is negative, backward subtitles, if positive, forward subtitles
 
 private:
   QList<Subtitle> _subtitles;
