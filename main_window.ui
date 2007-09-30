@@ -13,20 +13,120 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <layout class="QGridLayout" >
-    <property name="leftMargin" >
-     <number>0</number>
+   <widget class="QWidget" name="" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>151</width>
+      <height>211</height>
+     </rect>
     </property>
-    <property name="topMargin" >
-     <number>0</number>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QSlider" name="sliderMinutes" >
+       <property name="minimum" >
+        <number>-60</number>
+       </property>
+       <property name="maximum" >
+        <number>60</number>
+       </property>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition" >
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval" >
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="sliderSeconds" >
+       <property name="minimum" >
+        <number>-60</number>
+       </property>
+       <property name="maximum" >
+        <number>60</number>
+       </property>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition" >
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval" >
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="sliderMilliseconds" >
+       <property name="minimum" >
+        <number>-10</number>
+       </property>
+       <property name="maximum" >
+        <number>10</number>
+       </property>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition" >
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval" >
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="" >
+    <property name="geometry" >
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>341</width>
+      <height>29</height>
+     </rect>
     </property>
-    <property name="rightMargin" >
-     <number>0</number>
-    </property>
-    <property name="bottomMargin" >
-     <number>0</number>
-    </property>
-   </layout>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="labelShift" >
+       <property name="text" >
+        <string>Shift</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spinBoxShift" >
+       <property name="suffix" >
+        <string> ms</string>
+       </property>
+       <property name="minimum" >
+        <number>-3600000</number>
+       </property>
+       <property name="maximum" >
+        <number>3600000</number>
+       </property>
+       <property name="singleStep" >
+        <number>100</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelResult" >
+       <property name="text" >
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar" >
    <property name="geometry" >
